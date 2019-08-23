@@ -13,14 +13,8 @@ app.controller("authController", function ($scope, $http) {
             url: "app/api/login.php",
             data: $scope.loginData
         }).then(function (data) {
-            if (data.error != '') {
-                $scope.alertMsg = true;
-                $scope.alertClass = 'alert-danger';
-                $scope.alertMessage = data.error;
-            } else {
-                location.reload();
-            }
-        });
-    };
-
+            console.log("Login successfully sent to Server");
+            console.log($scope.loginData);
+        })
+    }
 });
